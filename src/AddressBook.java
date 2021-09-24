@@ -9,18 +9,25 @@ public class AddressBook {
     }
 
     public void addBuddy(BuddyInfo buddy) {
-        this.buddies.add(buddy);
+        if (buddy != null) {
+            this.buddies.add(buddy);
+        }
     }
 
-    public void removeBuddy(BuddyInfo buddy) {
-        this.buddies.remove(buddy);
+    public BuddyInfo removeBuddy(int index) {
+        if (index >= 0 && index < this.buddies.size()) {
+            return this.buddies.remove(index);
+        }
+
+        return null;
     }
 
     public static void main(String[] args) {
         BuddyInfo buddyInfo = new BuddyInfo("Jim", "Mimsy", "6138888888");
 
+        // Another sample change, but this time, on a branch!!
         AddressBook myAddressBook = new AddressBook();
         myAddressBook.addBuddy(buddyInfo);
-        myAddressBook.removeBuddy(buddyInfo);
+        BuddyInfo jim = myAddressBook.removeBuddy(0);
     }
 }

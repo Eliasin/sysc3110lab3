@@ -30,6 +30,7 @@ public class BuddyInfo {
     public static void main(String[] args) {
         BuddyInfo buddy = new BuddyInfo("David", "98 Somewhere Drive", "8792134");
 
+        // Sample
         System.out.println("Hello " + buddy.getName());
     }
 }
